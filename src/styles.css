@@ -1,0 +1,41 @@
+html, body, #app { height: 100%; }
+#app { display: flex; flex-direction: column; }
+.page-fill { flex: 1 1 auto; min-height: 0; }
+.reach-sidebar { max-height: calc(100vh - 56px); overflow-y: auto; border-right: 1px solid var(--bs-border-color); }
+.reach-wrap { position: relative; }
+.reach-map { height: clamp(450px, 70vh, 900px); }
+.reach-tabs .nav-link { color: var(--bs-body-color); }
+.reach-tabs .nav-link.active { font-weight: 600; border-bottom-color: #fff; }
+@media (max-width: 991.98px) {
+  .reach-sidebar { max-height: none; border-right: 0; }
+  .reach-map { height: max(450px, 60vh); }
+}
+.legend-svg text { font-size: 11px; fill: #333; }
+.legend-svg { max-width: 330px; display: block; }
+.chart-svg text { font-size: 11px; fill: #333; }
+.chart-svg .bar { cursor: pointer; }
+.deck-tooltip { font-size: 12px; }
+.maplibregl-ctrl-attrib { font-size: 11px; }
+.figma-frame { max-width: 1440px; }
+.figma-frame img { width: 100%; height: auto; border: 1px solid var(--bs-border-color); border-radius: .5rem; }
+
+.reach-ctl { position: absolute; z-index: 5; }
+.reach-search { top: 12px; left: 12px; width: min(340px, calc(100% - 90px)); }
+.reach-search .list-group { position: absolute; width: 100%; max-height: 220px; overflow-y: auto; }
+.reach-chips { top: 12px; left: min(366px, 60%); right: 60px; display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-start; pointer-events: none; }
+.reach-chips > * { pointer-events: auto; }
+.reach-chips .btn { border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.3); background: #fff; }
+.reach-chips .btn.active { background: #08519c; color: #fff; border-color: #08519c; }
+.reach-zoom { top: 12px; right: 12px; display: flex; flex-direction: column; gap: 6px; }
+.reach-zoom .btn { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3); width: 36px; height: 36px; padding: 0; }
+.reach-legend { left: 12px; bottom: 30px; width: 250px; background: rgba(255,255,255,.92); border-radius: 6px; padding: 6px 8px; box-shadow: 0 1px 3px rgba(0,0,0,.3); font-size: 10px; }
+.reach-popup { top: 56px; left: 12px; width: 320px; max-height: calc(100% - 70px); overflow-y: auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.35); padding: 12px 14px; }
+.reach-popup .big { font-size: 1.6rem; font-weight: 600; line-height: 1.1; }
+.reach-mode { top: 12px; left: 12px; }
+@media (max-width: 991px) { .reach-chips { left: 12px; top: 58px; right: 56px; } .reach-popup { top: 100px; } }
+.reach-timepop { position: absolute; top: 34px; left: 0; z-index: 5; width: 250px; background: #fff; border-radius: 8px; padding: 10px; }
+/* while a route popup is open the legend moves to the bottom right so the two never overlap */
+.reach-legend.with-route { left: auto; right: 12px; bottom: 78px; width: 280px; }
+@media (max-width: 991px) { .reach-legend.with-route { left: 12px; right: auto; bottom: 64px; width: 250px; } .reach-popup { max-height: calc(100% - 250px); } }
+.reach-chips .reach-timepop .btn-primary { background: #08519c; color: #fff; border-color: #08519c; box-shadow: none; border-radius: 6px; }
+.reach-chips .reach-timepop .btn-outline-primary { box-shadow: none; border-radius: 6px; }
